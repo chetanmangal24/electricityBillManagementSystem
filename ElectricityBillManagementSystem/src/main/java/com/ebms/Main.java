@@ -1,0 +1,26 @@
+package com.ebms;
+
+import com.ebms.ui.LoginFrame;
+import javax.swing.*;
+
+/**
+ * Main entry point for the Electricity Bill Management System.
+ * Launches the login screen.
+ */
+public class Main {
+
+    public static void main(String[] args) {
+        // Set system look and feel
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Launch application on Event Dispatch Thread
+        SwingUtilities.invokeLater(() -> {
+            LoginFrame loginFrame = new LoginFrame();
+            loginFrame.setVisible(true);
+        });
+    }
+}
